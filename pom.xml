@@ -5,7 +5,7 @@
     <groupId>works.buddy.samples</groupId>
     <artifactId>works-with-heroku</artifactId>
     <version>1.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <properties>
          <maven.compiler.source>1.6</maven.compiler.source>
          <maven.compiler.target>1.6</maven.compiler.target>
