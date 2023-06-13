@@ -3,5 +3,5 @@ WORKDIR /javaapp
 COPY . .
 RUN mvn clean install
 
-FROM adhig93/tomcat-conf
+FROM tomcat:jre17-temurin
 COPY --from=build /javaapp/target/*.war /usr/local/tomcat/webapps/
