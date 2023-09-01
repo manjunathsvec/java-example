@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: jenkins-k8s
-          image: manjunathsvec/manjunathrepo:javatest2 
+          image: manjunathsvec/manjunathrepo:${JOB_NAME}_$BUILD_NUMBER 
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080 
