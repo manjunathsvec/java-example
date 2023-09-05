@@ -1,0 +1,35 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-k8s
+spec:
+  selector:
+    matchLabels:
+      app: jenkins-k8s
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: jenkins-k8s
+    spec:
+      containers:
+      - name: jenkins-k8s
+        image: manjunathsvec/manjunathrepo:jenkins-k8s_13
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-k8s 
+  labels:
+    name: jenkins-k8s
+spec:
+  type: ClusterIP
+  ports:
+  - name: http 
+    port: 80
+    targetPort: 8090
+  selector:
+    app: jenkins-k8s
